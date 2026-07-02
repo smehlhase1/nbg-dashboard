@@ -53,7 +53,9 @@
   h2 { font-size: 16px; font-weight: 700; color: var(--text); margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
 
   /* ── Initiative cards ── */
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card-full  { grid-column: span 2; }
+  .card-half  { grid-column: span 1; }
   .card {
     background: #fff;
     border: 1px solid var(--border);
@@ -112,8 +114,7 @@
   .gap-tag { font-size: 10px; background: var(--red-lt); color: var(--red); border: 1px solid #fca5a5; border-radius: 4px; padding: 2px 7px; }
   .ok-tag  { font-size: 10px; background: var(--done-lt); color: var(--done); border: 1px solid #86efac; border-radius: 4px; padding: 2px 7px; }
 
-  /* ── Motor detail ── */
-  .motor-detail { grid-column: span 2; }
+  /* ── Epic list inside cards ── */
   .motor-epics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
   .epic-row { display: flex; align-items: center; gap: 8px; font-size: 12px; padding: 5px 0; border-bottom: 1px solid #f3f4f6; }
   .epic-row:last-child { border-bottom: none; }
@@ -189,7 +190,7 @@
   <div class="grid">
 
     <!-- MOTOR — featured card -->
-    <div class="card motor-detail">
+    <div class="card card-full">
       <div class="card-header">
         <div>
           <div class="title">NBG Motor</div>
@@ -251,7 +252,7 @@
     </div>
 
     <!-- HOME + BUSINESS PROPERTY (shared requirements) -->
-    <div class="card motor-detail">
+    <div class="card card-full">
       <div class="card-header">
         <div>
           <div class="title">NBG Property <span style="font-weight:400;color:var(--muted)">— Home &amp; Business</span></div>
@@ -287,7 +288,7 @@
     </div>
 
     <!-- UNIT LINKED SINGLE + REGULAR (shared requirements) -->
-    <div class="card motor-detail">
+    <div class="card card-full">
       <div class="card-header">
         <div>
           <div class="title">NBG Unit Linked <span style="font-weight:400;color:var(--muted)">— Single &amp; Regular</span></div>
@@ -326,7 +327,7 @@
 
 
 <!-- HEALTH INPATIENT -->
-    <div class="card">
+    <div class="card card-half">
       <div class="card-header">
         <div>
           <div class="title">NBG Health Inpatient</div>
@@ -367,7 +368,7 @@
     </div>
 
     <!-- FINANCIAL SERVICES -->
-    <div class="card">
+    <div class="card card-half">
       <div class="card-header">
         <div>
           <div class="title">NBG Financial Services</div>
