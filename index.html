@@ -72,6 +72,20 @@
   /* ── Section heading ── */
   h2 { font-size: 16px; font-weight: 700; color: var(--text); margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px; }
 
+  /* ── FlowForge tasks table ── */
+  .ff-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .ff-table thead tr { background: #f8fafc; }
+  .ff-table th { padding: 9px 12px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); border-bottom: 1px solid var(--border); }
+  .ff-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .ff-table tr:last-child td { border-bottom: none; }
+  .ff-table tr:hover td { background: #f9fafb; }
+  .ff-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; white-space: nowrap; }
+  .ff-badge.wip  { background: var(--wip-lt);  color: var(--wip); }
+  .ff-badge.todo { background: var(--todo-lt); color: var(--todo); }
+  .ff-badge.done { background: var(--done-lt); color: var(--done); }
+  .ff-ai-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; background: #ede9fe; color: #6d28d9; padding: 2px 7px; border-radius: 20px; }
+  .ff-initiative-tag { font-size: 11px; color: var(--muted); }
+
   /* ── Initiative cards ── */
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .card-full  { grid-column: span 2; }
@@ -524,6 +538,101 @@
         <tr><td><a href="https://sisu-agile.atlassian.net/browse/CIL-5683" target="_blank">CIL-5683</a></td><td>POST issuance — AZ DS flow (Scenario A + B)</td><td><code>PUT /rsc/applications/:id/send_for_acceptance</code> → prepay → charge</td><td class="spec-done">✅ Spec done</td></tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- ── FlowForge / AI-created tasks ── -->
+  <h2>🤖 FlowForge Tasks — Created with Claude Code AI</h2>
+  <div style="background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden">
+    <div style="background:#ede9fe;border-bottom:1px solid #ddd6fe;padding:10px 16px;display:flex;align-items:center;gap:8px">
+      <span class="ff-ai-tag">✦ FlowForge</span>
+      <span style="font-size:12px;color:#5b21b6">Tasks below were created by Claude Code AI and carry the <strong>FlowForge</strong> label in Jira</span>
+    </div>
+    <table class="ff-table">
+      <thead>
+        <tr>
+          <th>Ticket</th>
+          <th>Summary</th>
+          <th>Initiative</th>
+          <th>Assignee</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5618" target="_blank">CIL-5618</a></td>
+          <td>[NBG Property] sisu api: Extend fields to Property POST /quote request</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Mehdi Makki</td>
+          <td><span class="ff-badge wip">In Progress</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5653" target="_blank">CIL-5653</a></td>
+          <td>[NBG Property] property service: Integrate Quote with AZ GR /Offers (MEMBER)</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Marcin Kaminski</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5680" target="_blank">CIL-5680</a></td>
+          <td>[NBG Property] property service: Integrate Policy with AZ GR /applications</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Akman, Mert (Allianz Partners)</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5681" target="_blank">CIL-5681</a></td>
+          <td>[NBG Property] property service: Integrate Get Policy Document with AZ GR (application)</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Lubenets, Danylo (Allianz Partners)</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5682" target="_blank">CIL-5682</a></td>
+          <td>[NBG Property] sisu api: Introduce endpoint for Issuance of Property</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Akman, Mert (Allianz Partners)</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5699" target="_blank">CIL-5699</a></td>
+          <td>[NBG Property] sisu api: Extend fields to Property POST /policies for issuance</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Akman, Mert (Allianz Partners)</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5725" target="_blank">CIL-5725</a></td>
+          <td>[NBG Property] property service: Integrate POST Policy upload document</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Unassigned</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5766" target="_blank">CIL-5766</a></td>
+          <td>[NBG Property] property service: Integrate Get Policy Document with AZ GR (policy)</td>
+          <td class="ff-initiative-tag">Home Property</td>
+          <td>Unassigned</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5692" target="_blank">CIL-5692</a></td>
+          <td>[NBG UL] sisu api: Introduce Apply for Policy endpoint in new Life Insurance flow</td>
+          <td class="ff-initiative-tag">Unit Linked Single</td>
+          <td>Neetu Verma</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5704" target="_blank">CIL-5704</a></td>
+          <td>[MDDR] sisu-api: Forward multi-device array through mapper for Update Device</td>
+          <td class="ff-initiative-tag">Motor Day 1</td>
+          <td>Mishin, Igor (Allianz Partners)</td>
+          <td><span class="ff-badge todo">To Do</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="padding:8px 16px;background:#f8fafc;border-top:1px solid var(--border);font-size:11px;color:var(--muted)">
+      10 tickets · <a href="https://sisu-agile.atlassian.net/issues/?jql=labels%3DFlowForge%20AND%20text%20~%20%22NBG%22%20ORDER%20BY%20created%20DESC" target="_blank">View all in Jira ↗</a>
+    </div>
   </div>
 
   <!-- ── Key risks ── -->
