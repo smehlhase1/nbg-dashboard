@@ -26,6 +26,8 @@
 
   /* ── Header ── */
   header { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: #fff; padding: 36px 40px 32px; }
+  header .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+  header .inner-left { flex: 1; }
   header .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; opacity: .6; margin-bottom: 8px; }
   header h1 { font-size: 28px; font-weight: 700; letter-spacing: -.02em; }
   header .sub { margin-top: 6px; opacity: .65; font-size: 13px; }
@@ -35,6 +37,24 @@
   .dot-done { background: #4ade80; }
   .dot-wip  { background: #fbbf24; }
   .dot-todo { background: #9ca3af; }
+  /* ── Partner logos ── */
+  .partner-block { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; }
+  .partner-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; opacity: .45; }
+  .partner-logos { display: flex; flex-direction: column; gap: 8px; }
+  .partner-logo {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 14px;
+    height: 48px;
+    min-width: 160px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .partner-logo img { max-height: 28px; max-width: 130px; object-fit: contain; display: block; }
+  .partner-logo .fallback { font-size: 13px; font-weight: 700; }
+  .partner-sep { display: flex; align-items: center; gap: 8px; }
+  .partner-sep::before, .partner-sep::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.15); }
+  .partner-sep span { font-size: 10px; opacity: .4; }
 
   /* ── Layout ── */
   .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
@@ -141,14 +161,36 @@
 <body>
 
 <header>
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="eyebrow">15045 · NBG Integration</div>
-    <h1>NBG Initiatives — Progress Dashboard</h1>
-    <p class="sub">Initiative owner: Yigit Karatas · Last data pull: 2 Jul 2026</p>
-    <div class="meta">
-      <span class="meta-item"><span class="dot dot-done"></span> Done / Delivered</span>
-      <span class="meta-item"><span class="dot dot-wip"></span> In Progress</span>
-      <span class="meta-item"><span class="dot dot-todo"></span> Not Started</span>
+  <div class="inner">
+    <div class="inner-left">
+      <div class="eyebrow">15045 · NBG Integration</div>
+      <h1>NBG Initiatives — Progress Dashboard</h1>
+      <p class="sub">Initiative owner: Yigit Karatas · Last data pull: 2 Jul 2026</p>
+      <div class="meta">
+        <span class="meta-item"><span class="dot dot-done"></span> Done / Delivered</span>
+        <span class="meta-item"><span class="dot dot-wip"></span> In Progress</span>
+        <span class="meta-item"><span class="dot dot-todo"></span> Not Started</span>
+      </div>
+    </div>
+    <div class="partner-block">
+      <div class="partner-label">Partnership</div>
+      <div class="partner-logos">
+        <div class="partner-logo">
+          <img src="https://logo.clearbit.com/simplesurance.com" alt="Simplesurance"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="fallback" style="display:none;color:#0d9488;font-size:13px">simplesurance</span>
+        </div>
+        <div class="partner-logo">
+          <img src="https://logo.clearbit.com/allianz.gr" alt="Allianz Greece"
+               onerror="this.src='https://logo.clearbit.com/allianz.com';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex'}">
+          <span class="fallback" style="display:none;color:#003781;font-size:13px">Allianz Greece</span>
+        </div>
+        <div class="partner-logo">
+          <img src="https://logo.clearbit.com/nbg.gr" alt="National Bank of Greece"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="fallback" style="display:none;color:#003087;font-size:13px">NBG</span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
