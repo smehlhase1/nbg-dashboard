@@ -250,12 +250,15 @@
       </div>
     </div>
 
-    <!-- HOME PROPERTY -->
-    <div class="card">
+    <!-- HOME + BUSINESS PROPERTY (shared requirements) -->
+    <div class="card motor-detail">
       <div class="card-header">
         <div>
-          <div class="title">NBG Home Property</div>
-          <div class="jira"><a href="https://sisu-agile.atlassian.net/browse/PROD-13168" target="_blank">PROD-13168</a></div>
+          <div class="title">NBG Property <span style="font-weight:400;color:var(--muted)">— Home &amp; Business</span></div>
+          <div class="jira" style="display:flex;gap:10px">
+            <span>Home: <a href="https://sisu-agile.atlassian.net/browse/PROD-13168" target="_blank">PROD-13168</a></span>
+            <span>Business: <a href="https://sisu-agile.atlassian.net/browse/PROD-13298" target="_blank">PROD-13298</a></span>
+          </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
           <span class="status-pill pill-wip">🔄 In Progress</span>
@@ -263,145 +266,66 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="phases">
-          <span class="phase phase-wip">Requirements Gathering</span>
-          <span class="phase phase-todo">API Draft</span>
-          <span class="phase phase-todo">Quote/Offer</span>
-          <span class="phase phase-todo">Documents</span>
-          <span class="phase phase-todo">Issuance</span>
-          <span class="phase phase-todo">Apply for Policy</span>
-          <span class="phase phase-todo">Kafka Streams</span>
+        <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:8px 12px;font-size:12px;margin-bottom:12px;color:#166534">
+          Home &amp; Business Property share the same BRD and requirements. Active work runs under the Home initiative — Business Property delivery epics will start once Home requirements are signed off.
         </div>
-        <div class="progress-row">
-          <div class="progress-bar">
-            <div class="seg-wip" style="width:25%"></div>
-          </div>
-          <div class="progress-counts">0 done · 2 in progress · 6 to do</div>
-        </div>
-        <div class="motor-epics" style="margin-top:8px">
+        <div class="motor-epics">
+          <div style="grid-column:span 2;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:4px;border-bottom:1px solid var(--border);margin-bottom:4px">Home Property — Active</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13169" target="_blank">PROD-13169</a> Requirements Gathering</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13246" target="_blank">PROD-13246</a> Raisat Ramazanova Onboarding</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span>API Draft · Quote/Offer · Documents</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span>Issuance · Apply for Policy · Kafka</div>
+          <div class="epic-row"><span class="epic-status es-todo"></span>API Draft (PROD-13170)</div>
+          <div class="epic-row"><span class="epic-status es-todo"></span>Quote/Offer · Docs · Issuance · Apply · Kafka</div>
+          <div style="grid-column:span 2;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:4px;border-bottom:1px solid var(--border);margin:8px 0 4px">Business Property — Awaiting Home sign-off</div>
+          <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>Requirements Gathering (PROD-13424)</div>
+          <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>API Draft · Quote/Offer · Docs · Issuance · Apply · Kafka</div>
         </div>
         <div class="notes">
-          <div class="note-item">📄 <span>Process flow &amp; Property overview documented in Confluence</span></div>
-          <div class="note-item">📋 <span>CIL Coverage Log: 8 specs done (quote, docs, issuance) — awaiting delivery epics to start</span></div>
+          <div class="note-item">📄 <span>Process flow, Property overview &amp; BRD Synopsis in Confluence</span></div>
+          <div class="note-item">📋 <span>CIL Coverage Log: 8 specs done (quote, docs, issuance) — awaiting delivery epics</span></div>
         </div>
       </div>
     </div>
 
-    <!-- UNIT LINKED SINGLE -->
-    <div class="card">
+    <!-- UNIT LINKED SINGLE + REGULAR (shared requirements) -->
+    <div class="card motor-detail">
       <div class="card-header">
         <div>
-          <div class="title">NBG Unit Linked Single</div>
-          <div class="jira"><a href="https://sisu-agile.atlassian.net/browse/PROD-13264" target="_blank">PROD-13264</a></div>
+          <div class="title">NBG Unit Linked <span style="font-weight:400;color:var(--muted)">— Single &amp; Regular</span></div>
+          <div class="jira" style="display:flex;gap:10px">
+            <span>Single: <a href="https://sisu-agile.atlassian.net/browse/PROD-13264" target="_blank">PROD-13264</a></span>
+            <span>Regular: <a href="https://sisu-agile.atlassian.net/browse/PROD-13299" target="_blank">PROD-13299</a></span>
+          </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
           <span class="status-pill pill-wip">🔄 In Progress</span>
-          <div class="owner">Yigit Karatas</div>
+          <div class="owner">Neetu Verma (Single) · Unassigned (Regular)</div>
         </div>
       </div>
       <div class="card-body">
-        <div class="phases">
-          <span class="phase phase-wip">Requirements Gathering</span>
-          <span class="phase phase-wip">API Modifications</span>
-          <span class="phase phase-todo">Integration Setup</span>
-          <span class="phase phase-todo">Quote/Offer</span>
-          <span class="phase phase-todo">Documents</span>
-          <span class="phase phase-todo">Issuance</span>
-          <span class="phase phase-todo">Apply for Policy</span>
-          <span class="phase phase-todo">Kafka Streams</span>
+        <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:8px 12px;font-size:12px;margin-bottom:12px;color:#166534">
+          Unit Linked Single and Regular share the same BRD and requirements. Active work runs under the Single initiative — Regular delivery epics will follow once Single requirements are signed off.
         </div>
-        <div class="progress-row">
-          <div class="progress-bar">
-            <div class="seg-wip" style="width:25%"></div>
-          </div>
-          <div class="progress-counts">0 done · 2 epics in progress · 6 to do</div>
-        </div>
-        <div class="motor-epics" style="margin-top:8px">
+        <div class="motor-epics">
+          <div style="grid-column:span 2;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:4px;border-bottom:1px solid var(--border);margin-bottom:4px">Unit Linked Single — Active</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13265" target="_blank">PROD-13265</a> Business Requirements Gathering</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13267" target="_blank">PROD-13267</a> API Modifications</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13329" target="_blank">PROD-13329</a> Andrii Gatsaniuk Onboarding</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13271" target="_blank">PROD-13271</a> Integration Setup</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13284" target="_blank">PROD-13284</a> Offer/Quote Integration</div>
           <div class="epic-row"><span class="epic-status es-todo"></span>Apply for Policy · Issuance · Docs · Kafka</div>
+          <div style="grid-column:span 2;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:4px;border-bottom:1px solid var(--border);margin:8px 0 4px">Unit Linked Regular — Awaiting Single sign-off</div>
+          <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>Requirements Gathering (PROD-13417)</div>
+          <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>API Draft · Quote/Offer · Docs · Issuance · Apply · Kafka</div>
         </div>
         <div class="notes">
-          <div class="note-item">📄 <span>BRD &amp; Process Flow documented in Confluence · Products: Unit Linked Single Payment (€5k–€300k)</span></div>
-          <div class="note-item">🔧 <span>CIL tasks assigned: <a href="https://sisu-agile.atlassian.net/browse/CIL-5691" target="_blank">CIL-5691</a> Quote endpoint → Mehdi Makki · <a href="https://sisu-agile.atlassian.net/browse/CIL-5692" target="_blank">CIL-5692</a> Apply for Policy → Neetu Verma</span></div>
+          <div class="note-item">📄 <span>BRD &amp; Process Flow in Confluence · Single: €5k–€300k · Regular: €840–€10k/year</span></div>
+          <div class="note-item">🔧 <span>CIL tasks: <a href="https://sisu-agile.atlassian.net/browse/CIL-5691" target="_blank">CIL-5691</a> Quote → Mehdi Makki · <a href="https://sisu-agile.atlassian.net/browse/CIL-5692" target="_blank">CIL-5692</a> Apply for Policy → Neetu Verma · <a href="https://sisu-agile.atlassian.net/browse/CIL-5822" target="_blank">CIL-5822</a> AZ GR Offers → Neetu Verma</span></div>
         </div>
       </div>
     </div>
 
-    <!-- UNIT LINKED REGULAR -->
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="title">NBG Unit Linked Regular</div>
-          <div class="jira"><a href="https://sisu-agile.atlassian.net/browse/PROD-13299" target="_blank">PROD-13299</a></div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
-          <span class="status-pill pill-wip">🔄 In Progress</span>
-          <div class="owner">Unassigned</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="phases">
-          <span class="phase phase-todo">Requirements Gathering</span>
-          <span class="phase phase-todo">API Draft</span>
-          <span class="phase phase-todo">Quote/Offer</span>
-          <span class="phase phase-todo">Documents</span>
-          <span class="phase phase-todo">Issuance</span>
-          <span class="phase phase-todo">Apply for Policy</span>
-          <span class="phase phase-todo">Kafka Streams</span>
-        </div>
-        <div class="progress-row">
-          <div class="progress-bar"></div>
-          <div class="progress-counts">Epics created · not started</div>
-        </div>
-        <div class="notes">
-          <div class="note-item">📋 <span>Products: Unit Linked Regular Payment (€840–€10k/year)</span></div>
-          <div class="note-item">⚠️ <span>No owner assigned at initiative level</span></div>
-        </div>
-      </div>
-    </div>
 
-    <!-- BUSINESS PROPERTY -->
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="title">NBG Business Property</div>
-          <div class="jira"><a href="https://sisu-agile.atlassian.net/browse/PROD-13298" target="_blank">PROD-13298</a></div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
-          <span class="status-pill pill-wip">🔄 In Progress</span>
-          <div class="owner">Unassigned</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="phases">
-          <span class="phase phase-todo">Requirements Gathering</span>
-          <span class="phase phase-todo">API Draft</span>
-          <span class="phase phase-todo">Quote/Offer</span>
-          <span class="phase phase-todo">Documents</span>
-          <span class="phase phase-todo">Issuance</span>
-          <span class="phase phase-todo">Apply for Policy</span>
-          <span class="phase phase-todo">Kafka Streams</span>
-        </div>
-        <div class="progress-row">
-          <div class="progress-bar"></div>
-          <div class="progress-counts">All 7 epics To Do</div>
-        </div>
-        <div class="notes">
-          <div class="note-item">📄 <span>BRD Synopsis &amp; Overview page in Confluence (Property space)</span></div>
-          <div class="note-item">⚠️ <span>No owner assigned — no work started despite In Progress status</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HEALTH INPATIENT -->
+<!-- HEALTH INPATIENT -->
     <div class="card">
       <div class="card-header">
         <div>
