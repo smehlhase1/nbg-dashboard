@@ -156,6 +156,18 @@
   .es-done { background: var(--done); }
   .es-wip  { background: var(--wip); }
   .es-todo { background: var(--todo); }
+  /* epic rows that carry CIL sub-tickets */
+  .epic-row-with-cil { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .epic-row-head { display: flex; align-items: center; gap: 8px; }
+  .cil-chips { display: flex; flex-wrap: wrap; gap: 4px; padding-left: 16px; }
+  .cil-chip { font-size: 10px; font-weight: 600; padding: 1px 7px; border-radius: 4px; white-space: nowrap; }
+  .cil-chip a { font-weight: 700; }
+  .cil-chip-wip  { background: var(--wip-lt);  color: var(--wip); }
+  .cil-chip-wip a  { color: var(--wip); }
+  .cil-chip-todo { background: var(--todo-lt); color: var(--todo); }
+  .cil-chip-todo a { color: var(--todo); }
+  .cil-chip-done { background: var(--done-lt); color: var(--done); }
+  .cil-chip-done a { color: var(--done); }
 
   /* ── CIL coverage table ── */
   .cil-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
@@ -179,7 +191,7 @@
     <div class="inner-left">
       <div class="eyebrow">15045 · NBG Integration</div>
       <h1>NBG Initiatives — Progress Dashboard</h1>
-      <p class="sub">Initiative owner: Yigit Karatas · Last data pull: 3 Jul 2026</p>
+      <p class="sub">Initiative owner: Yigit Karatas · Last data pull: 13 Jul 2026</p>
       <div class="meta">
         <span class="meta-item"><span class="dot dot-done"></span> Done / Delivered</span>
         <span class="meta-item"><span class="dot dot-wip"></span> In Progress</span>
@@ -264,17 +276,17 @@
           <span class="phase phase-done">Dev Setup ✓</span>
           <span class="phase phase-done">API Draft ✓</span>
           <span class="phase phase-done">Endpoint Verify ✓</span>
-          <span class="phase phase-wip">Day 1 Integration</span>
+          <span class="phase phase-done">Day 1 Integration ✓</span>
           <span class="phase phase-wip">Lookups</span>
           <span class="phase phase-todo">API Modifications</span>
           <span class="phase phase-todo">Kafka / Events</span>
         </div>
         <div class="progress-row">
           <div class="progress-bar">
-            <div class="seg-done" style="width:55%"></div>
-            <div class="seg-wip"  style="width:25%"></div>
+            <div class="seg-done" style="width:65%"></div>
+            <div class="seg-wip"  style="width:20%"></div>
           </div>
-          <div class="progress-counts">6 done · 2 in progress · 2 to do</div>
+          <div class="progress-counts">7 done · 2 in progress · 1 to do</div>
         </div>
         <div class="motor-epics">
           <div class="epic-row"><span class="epic-status es-done"></span>Business Requirements Gathering</div>
@@ -283,9 +295,33 @@
           <div class="epic-row"><span class="epic-status es-done"></span>CIL API Draft</div>
           <div class="epic-row"><span class="epic-status es-done"></span>Verify &amp; Integrate Endpoints</div>
           <div class="epic-row"><span class="epic-status es-done"></span>AUT Mock-Enabled (CI) ✓</div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-12920" target="_blank">PROD-12920</a> Day 1 Integration — <span style="color:var(--wip);font-size:11px"><a href="https://sisu-agile.atlassian.net/browse/CIL-5579" target="_blank">CIL-5579</a> Policy Details: In Progress (Baghirov) · <a href="https://sisu-agile.atlassian.net/browse/CIL-5288" target="_blank">CIL-5288</a> Modifications: In Progress · <a href="https://sisu-agile.atlassian.net/browse/CIL-5600" target="_blank">CIL-5600</a> Quote discount: In Code Review · <a href="https://sisu-agile.atlassian.net/browse/CIL-5464" target="_blank">CIL-5464</a> 200/empty bug: In Code Review</span></div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13399" target="_blank">PROD-13399</a> Lookups Integration — <span style="color:var(--wip);font-size:11px"><a href="https://sisu-agile.atlassian.net/browse/CIL-5471" target="_blank">CIL-5471</a> Bundle call: In Code Review (Zamani) · <a href="https://sisu-agile.atlassian.net/browse/CIL-5774" target="_blank">CIL-5774</a> Non-bundle codes: To Do</span></div>
-          <div class="epic-row"><span class="epic-status es-todo"></span>API Modifications — <span style="color:var(--todo);font-size:11px"><a href="https://sisu-agile.atlassian.net/browse/CIL-5685" target="_blank">CIL-5685</a> message field · <a href="https://sisu-agile.atlassian.net/browse/CIL-5599" target="_blank">CIL-5599</a> payment reconciliation ref (Kaminski) · <a href="https://sisu-agile.atlassian.net/browse/CIL-5246" target="_blank">CIL-5246</a> payment trigger (Baghirov)</span></div>
+          <div class="epic-row epic-row-with-cil">
+            <div class="epic-row-head"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-12920" target="_blank">PROD-12920</a> Day 1 Integration ✓</div>
+            <div class="cil-chips">
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5579" target="_blank">CIL-5579</a> Policy Details · Done ✓</span>
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5288" target="_blank">CIL-5288</a> Modifications · Done ✓</span>
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5600" target="_blank">CIL-5600</a> Quote discount · Done ✓</span>
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5464" target="_blank">CIL-5464</a> 200/empty bug · Done ✓</span>
+            </div>
+          </div>
+          <div class="epic-row epic-row-with-cil">
+            <div class="epic-row-head"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13399" target="_blank">PROD-13399</a> Lookups Integration</div>
+            <div class="cil-chips">
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5471" target="_blank">CIL-5471</a> Bundle call · Done ✓</span>
+              <span class="cil-chip cil-chip-todo"><a href="https://sisu-agile.atlassian.net/browse/CIL-5774" target="_blank">CIL-5774</a> Non-bundle codes · To Do</span>
+              <span class="cil-chip cil-chip-todo"><a href="https://sisu-agile.atlassian.net/browse/CIL-5933" target="_blank">CIL-5933</a> Fix quotes/prices mappings · To Do</span>
+              <span class="cil-chip cil-chip-todo"><a href="https://sisu-agile.atlassian.net/browse/CIL-5934" target="_blank">CIL-5934</a> Fix offers mappings · To Do</span>
+            </div>
+          </div>
+          <div class="epic-row epic-row-with-cil">
+            <div class="epic-row-head"><span class="epic-status es-wip"></span>API Modifications</div>
+            <div class="cil-chips">
+              <span class="cil-chip cil-chip-todo"><a href="https://sisu-agile.atlassian.net/browse/CIL-5685" target="_blank">CIL-5685</a> message field · To Do</span>
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5599" target="_blank">CIL-5599</a> payment reconciliation ref · Done ✓</span>
+              <span class="cil-chip cil-chip-wip"><a href="https://sisu-agile.atlassian.net/browse/CIL-5246" target="_blank">CIL-5246</a> payment trigger · In Code Review (Baghirov)</span>
+              <span class="cil-chip cil-chip-todo"><a href="https://sisu-agile.atlassian.net/browse/CIL-5884" target="_blank">CIL-5884</a> remove hardcoded PartnerSLUG · To Do</span>
+            </div>
+          </div>
           <div class="epic-row"><span class="epic-status es-todo"></span>Motor Requirements (v2)</div>
         </div>
         <div class="notes">
@@ -329,20 +365,47 @@
         <div class="motor-epics">
           <div style="grid-column:span 2;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:4px;border-bottom:1px solid var(--border);margin-bottom:4px">Home Property — Active</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13169" target="_blank">PROD-13169</a> Requirements Gathering</div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13246" target="_blank">PROD-13246</a> Raisat Ramazanova Onboarding</div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13170" target="_blank">PROD-13170</a> API Draft — <span style="color:var(--wip);font-size:11px">In Progress · CIL-5618 In Code Review (Makki) · CIL-5682 In Code Review (Akman) · CIL-5699 AI-Gen In Progress (Akman)</span></div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13171" target="_blank">PROD-13171</a> Quote/Offer Integration — <span style="color:var(--wip);font-size:11px">In Progress · CIL-5296 To Do (Zamani) · CIL-5653 Backlog (Kaminski)</span></div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13312" target="_blank">PROD-13312</a> Documents Integration — <span style="color:var(--wip);font-size:11px">In Progress · CIL-5681 AI-Gen Done (Lubenets) · CIL-5725 To Do · CIL-5766 AI-Gen In Progress (Makki)</span></div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13320" target="_blank">PROD-13320</a> Apply for Policy Integration — <span style="color:var(--wip);font-size:11px">In Progress · CIL-5680 To Do (Akman)</span></div>
-          <div class="epic-row"><span class="epic-status es-todo"></span>Issuance Integration · Kafka Streams</div>
+          <div class="epic-row"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13246" target="_blank">PROD-13246</a> Raisat Ramazanova Onboarding ✓</div>
+          <div class="epic-row epic-row-with-cil">
+            <div class="epic-row-head"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13170" target="_blank">PROD-13170</a> API Draft ✓</div>
+            <div class="cil-chips">
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5618" target="_blank">CIL-5618</a> Done ✓ (Makki)</span>
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5682" target="_blank">CIL-5682</a> Done ✓ (Akman)</span>
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5699" target="_blank">CIL-5699</a> Done ✓ (Akman)</span>
+            </div>
+          </div>
+          <div class="epic-row epic-row-with-cil">
+            <div class="epic-row-head"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13171" target="_blank">PROD-13171</a> Quote/Offer Integration</div>
+            <div class="cil-chips">
+              <span class="cil-chip cil-chip-wip"><a href="https://sisu-agile.atlassian.net/browse/CIL-5296" target="_blank">CIL-5296</a> In Progress (Zamani)</span>
+              <span class="cil-chip cil-chip-wip"><a href="https://sisu-agile.atlassian.net/browse/CIL-5653" target="_blank">CIL-5653</a> In Progress (Kaminski)</span>
+            </div>
+          </div>
+          <div class="epic-row epic-row-with-cil">
+            <div class="epic-row-head"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13312" target="_blank">PROD-13312</a> Documents Integration</div>
+            <div class="cil-chips">
+              <span class="cil-chip cil-chip-wip"><a href="https://sisu-agile.atlassian.net/browse/CIL-5681" target="_blank">CIL-5681</a> In Code Review (Rudametkin)</span>
+              <span class="cil-chip cil-chip-wip"><a href="https://sisu-agile.atlassian.net/browse/CIL-5725" target="_blank">CIL-5725</a> In Progress (Zamani)</span>
+              <span class="cil-chip cil-chip-done"><a href="https://sisu-agile.atlassian.net/browse/CIL-5766" target="_blank">CIL-5766</a> Done ✓ (Makki)</span>
+            </div>
+          </div>
+          <div class="epic-row epic-row-with-cil">
+            <div class="epic-row-head"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13320" target="_blank">PROD-13320</a> Apply for Policy Integration</div>
+            <div class="cil-chips">
+              <span class="cil-chip cil-chip-wip"><a href="https://sisu-agile.atlassian.net/browse/CIL-5680" target="_blank">CIL-5680</a> In Progress (Akman)</span>
+            </div>
+          </div>
+          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13313" target="_blank">PROD-13313</a> Issuance Integration</div>
+          <div class="epic-row"><span class="epic-status es-todo"></span>Kafka Streams</div>
+          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13535" target="_blank">PROD-13535</a> Amendments</div>
           <div style="grid-column:span 2;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:4px;border-bottom:1px solid var(--border);margin:8px 0 4px">Business Property — Awaiting Home sign-off</div>
           <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>Requirements Gathering (PROD-13424)</div>
           <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>API Draft · Quote/Offer · Docs · Issuance · Apply · Kafka</div>
         </div>
         <div class="notes">
           <div class="note-item">📄 <span>Process flow, Property overview &amp; BRD Synopsis in Confluence</span></div>
-          <div class="note-item">🟢 <span><strong>Delivery epics now started</strong> — API Draft, Quote/Offer, Documents &amp; Apply for Policy all In Progress this week</span></div>
-          <div class="note-item">📋 <span>CIL Coverage Log: 8 specs done (quote, docs, issuance) · 4 delivery epics active with AI-Gen support</span></div>
+          <div class="note-item">🟢 <span><strong>API Draft complete</strong> — all 3 CIL specs merged; Quote/Offer, Documents, Apply for Policy &amp; Issuance all now In Progress</span></div>
+          <div class="note-item">📋 <span>CIL Coverage Log: 8 specs done (quote, docs, issuance) · 4 delivery epics active · New: Amendments epic added (PROD-13535)</span></div>
         </div>
       </div>
     </div>
@@ -371,24 +434,27 @@
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13265" target="_blank">PROD-13265</a> Business Requirements Gathering</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13267" target="_blank">PROD-13267</a> API Modifications</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13329" target="_blank">PROD-13329</a> Andrii Gatsaniuk Onboarding</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13271" target="_blank">PROD-13271</a> Integration Setup</div>
+          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13271" target="_blank">PROD-13271</a> Integration Setup</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13284" target="_blank">PROD-13284</a> Offer/Quote Integration</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13410" target="_blank">PROD-13410</a> Requirements (new)</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13411" target="_blank">PROD-13411</a> API Draft</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13412" target="_blank">PROD-13412</a> Quote/Offer Integration</div>
+          <div class="epic-row"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13410" target="_blank">PROD-13410</a> Requirements ✓</div>
+          <div class="epic-row"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13411" target="_blank">PROD-13411</a> API Draft ✓</div>
+          <div class="epic-row"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13412" target="_blank">PROD-13412</a> Quote/Offer Integration ✓</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13413" target="_blank">PROD-13413</a> Documents Integration</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13414" target="_blank">PROD-13414</a> Issuance + Renewal/Further</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13415" target="_blank">PROD-13415</a> Apply for Policy Integration</div>
+          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13415" target="_blank">PROD-13415</a> Apply for Policy Integration</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13416" target="_blank">PROD-13416</a> Kafka Streams</div>
-          <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13496" target="_blank">PROD-13496</a> Flow Forge Exploring — <span style="color:var(--wip);font-size:11px">In Progress</span></div>
+          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13689" target="_blank">PROD-13689</a> Get Policy Details Integration</div>
+          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13712" target="_blank">PROD-13712</a> Cancellation &amp; Amendments</div>
+          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13709" target="_blank">PROD-13709</a> Excel parameters file (Gatsaniuk)</div>
+          <div class="epic-row"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13496" target="_blank">PROD-13496</a> Flow Forge Exploring ✓</div>
           <div style="grid-column:span 2;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:4px;border-bottom:1px solid var(--border);margin:8px 0 4px">Unit Linked Regular — Awaiting Single sign-off</div>
           <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>Requirements Gathering (PROD-13417)</div>
           <div class="epic-row" style="color:var(--muted)"><span class="epic-status es-todo"></span>API Draft · Quote/Offer · Docs · Issuance · Apply · Kafka</div>
         </div>
         <div class="notes">
           <div class="note-item">📄 <span>BRD &amp; Process Flow in Confluence · Single: €5k–€300k · Regular: €840–€10k/year</span></div>
-          <div class="note-item">🔵 <span>Process Flow Mappings In Review (Gatsaniuk): <a href="https://sisu-agile.atlassian.net/browse/PROD-13368" target="_blank">PROD-13368</a> Quote · <a href="https://sisu-agile.atlassian.net/browse/PROD-13370" target="_blank">PROD-13370</a> Apply for Policy · <a href="https://sisu-agile.atlassian.net/browse/PROD-13371" target="_blank">PROD-13371</a> Get Questions</span></div>
-          <div class="note-item">🔧 <span>CIL tasks: <a href="https://sisu-agile.atlassian.net/browse/CIL-5691" target="_blank">CIL-5691</a> Quote → Mehdi Makki · <a href="https://sisu-agile.atlassian.net/browse/CIL-5692" target="_blank">CIL-5692</a> Apply for Policy → Neetu Verma · <a href="https://sisu-agile.atlassian.net/browse/CIL-5822" target="_blank">CIL-5822</a> AZ GR Offers → Neetu Verma</span></div>
+          <div class="note-item">✅ <span>Process Flow Mappings Done (Gatsaniuk): <a href="https://sisu-agile.atlassian.net/browse/PROD-13368" target="_blank">PROD-13368</a> Quote · <a href="https://sisu-agile.atlassian.net/browse/PROD-13370" target="_blank">PROD-13370</a> Apply for Policy · <a href="https://sisu-agile.atlassian.net/browse/PROD-13371" target="_blank">PROD-13371</a> Get Questions — all Done ✓</span></div>
+          <div class="note-item">🔧 <span>CIL tasks: <a href="https://sisu-agile.atlassian.net/browse/CIL-5691" target="_blank">CIL-5691</a> Quote In Code Review (Zamani) · <a href="https://sisu-agile.atlassian.net/browse/CIL-5692" target="_blank">CIL-5692</a> Apply for Policy In Progress (Akman) · <a href="https://sisu-agile.atlassian.net/browse/CIL-5822" target="_blank">CIL-5822</a> AZ GR Offers To Do (Zamani) · <a href="https://sisu-agile.atlassian.net/browse/CIL-5900" target="_blank">CIL-5900</a> Issuance In Code Review (Kazanci) · <a href="https://sisu-agile.atlassian.net/browse/CIL-6132" target="_blank">CIL-6132</a> GET /policies fields In Progress (Makki)</span></div>
         </div>
       </div>
     </div>
@@ -418,15 +484,16 @@
         </div>
         <div class="progress-row">
           <div class="progress-bar">
-            <div class="seg-wip" style="width:25%"></div>
+            <div class="seg-done" style="width:20%"></div>
+            <div class="seg-wip" style="width:20%"></div>
           </div>
-          <div class="progress-counts">0 done · 2 in progress · 5 to do</div>
+          <div class="progress-counts">2 done · 2 in progress · 5 to do</div>
         </div>
         <div class="motor-epics" style="margin-top:8px">
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13401" target="_blank">PROD-13401</a> Requirements Gathering</div>
           <div class="epic-row"><span class="epic-status es-wip"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13380" target="_blank">PROD-13380</a> Fidan Ismayilova Onboarding</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13459" target="_blank">PROD-13459</a> Requirements (new)</div>
-          <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13460" target="_blank">PROD-13460</a> API Draft</div>
+          <div class="epic-row"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13459" target="_blank">PROD-13459</a> Requirements ✓</div>
+          <div class="epic-row"><span class="epic-status es-done"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13460" target="_blank">PROD-13460</a> API Draft ✓</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13461" target="_blank">PROD-13461</a> Quote/Offer Integration</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13462" target="_blank">PROD-13462</a> Documents Integration</div>
           <div class="epic-row"><span class="epic-status es-todo"></span><a href="https://sisu-agile.atlassian.net/browse/PROD-13463" target="_blank">PROD-13463</a> Issuance + Renewal/Further</div>
@@ -435,7 +502,7 @@
         </div>
         <div class="notes">
           <div class="note-item">📄 <span>BRD Synopsis &amp; Process Flow documented in Confluence</span></div>
-          <div class="note-item">🔧 <span>CIL-5775 Health BRD Review → Fidan (To Do) · 7 new delivery epics created this week (PROD-13459–13465)</span></div>
+          <div class="note-item">🔧 <span>CIL-5775 Health BRD Review — To Do (unassigned) · Requirements &amp; API Draft epics Closed ✓ · 5 delivery epics (PROD-13461–13465) remain To Do</span></div>
           <div class="note-item">⚠️ <span>No named initiative owner — delivery epics unassigned</span></div>
         </div>
       </div>
@@ -504,7 +571,7 @@
     <div class="upcoming-card">
       <div class="uc-name">NBG Service Request</div>
       <div class="uc-key"><a href="https://sisu-agile.atlassian.net/browse/PROD-13146" target="_blank">PROD-13146</a></div>
-      <div class="uc-note">To Do · owner: Yigit Karatas</div>
+      <div class="uc-note">Requirements Gathering In Progress (PROD-13147) · owner: Yigit Karatas</div>
     </div>
 
     <div class="upcoming-card">
@@ -581,70 +648,70 @@
           <td>[NBG Property] sisu api: Extend fields to Property POST /quote request</td>
           <td class="ff-initiative-tag">Home Property</td>
           <td>Mehdi Makki</td>
-          <td><span class="ff-badge wip">In Code Review</span></td>
+          <td><span class="ff-badge done">Done</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5653" target="_blank">CIL-5653</a></td>
           <td>[NBG Property] property service: Integrate Quote with AZ GR /Offers (MEMBER)</td>
           <td class="ff-initiative-tag">Home Property</td>
           <td>Marcin Kaminski</td>
-          <td><span class="ff-badge todo">To Do</span></td>
+          <td><span class="ff-badge wip">In Progress</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5680" target="_blank">CIL-5680</a></td>
           <td>[NBG Property] property service: Integrate Policy with AZ GR /applications</td>
           <td class="ff-initiative-tag">Home Property</td>
           <td>Akman, Mert (Allianz Partners)</td>
-          <td><span class="ff-badge todo">To Do</span></td>
+          <td><span class="ff-badge wip">In Progress</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5681" target="_blank">CIL-5681</a></td>
           <td>[NBG Property] property service: Integrate Get Policy Document with AZ GR (application)</td>
           <td class="ff-initiative-tag">Home Property</td>
-          <td>Lubenets, Danylo (Allianz Partners)</td>
-          <td><span class="ff-badge done">AI-Gen Done</span></td>
+          <td>Stanislau Rudametkin</td>
+          <td><span class="ff-badge wip">In Code Review</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5682" target="_blank">CIL-5682</a></td>
           <td>[NBG Property] sisu api: Introduce endpoint for Issuance of Property</td>
           <td class="ff-initiative-tag">Home Property</td>
           <td>Akman, Mert (Allianz Partners)</td>
-          <td><span class="ff-badge wip">In Code Review</span></td>
+          <td><span class="ff-badge done">Done</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5699" target="_blank">CIL-5699</a></td>
           <td>[NBG Property] sisu api: Extend fields to Property POST /policies for issuance</td>
           <td class="ff-initiative-tag">Home Property</td>
           <td>Akman, Mert (Allianz Partners)</td>
-          <td><span class="ff-badge wip">AI-Gen In Progress</span></td>
+          <td><span class="ff-badge done">Done</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5725" target="_blank">CIL-5725</a></td>
           <td>[NBG Property] property service: Integrate POST Policy upload document</td>
           <td class="ff-initiative-tag">Home Property</td>
-          <td>Unassigned</td>
-          <td><span class="ff-badge todo">To Do</span></td>
+          <td>Hassan Zamani</td>
+          <td><span class="ff-badge wip">In Progress</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5766" target="_blank">CIL-5766</a></td>
           <td>[NBG Property] property service: Integrate Get Policy Document with AZ GR (policy)</td>
           <td class="ff-initiative-tag">Home Property</td>
           <td>Mehdi Makki</td>
-          <td><span class="ff-badge wip">AI-Gen In Progress</span></td>
+          <td><span class="ff-badge done">Done</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5692" target="_blank">CIL-5692</a></td>
-          <td>[NBG UL] sisu api: Introduce Apply for Policy endpoint in new Life Insurance flow</td>
+          <td>[NBG UL] sisu api: Introduce Apply for Policy endpoint in new Life Insurance API</td>
           <td class="ff-initiative-tag">Unit Linked Single</td>
-          <td>Neetu Verma</td>
-          <td><span class="ff-badge todo">To Do</span></td>
+          <td>Akman, Mert (Allianz Partners)</td>
+          <td><span class="ff-badge wip">In Progress</span></td>
         </tr>
         <tr>
           <td><a href="https://sisu-agile.atlassian.net/browse/CIL-5704" target="_blank">CIL-5704</a></td>
-          <td>[MDDR] sisu-api: Forward multi-device array through mapper for Update Device</td>
+          <td>[MDDR] sisu-api: Forward multi-device array through mapper for Update Beneficiary endpoint</td>
           <td class="ff-initiative-tag">Motor Day 1</td>
           <td>Mishin, Igor (Allianz Partners)</td>
-          <td><span class="ff-badge todo">To Do</span></td>
+          <td><span class="ff-badge done">Done</span></td>
         </tr>
       </tbody>
     </table>
